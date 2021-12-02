@@ -1,4 +1,6 @@
-﻿int N = int.Parse(Console.ReadLine());
+﻿//  8. Показать четные числа от 1 до N
+
+int N = Convert.ToInt32(Console.ReadLine());
 int count = 1;
 while (count <=N)
 {

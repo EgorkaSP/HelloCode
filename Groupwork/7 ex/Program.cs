@@ -1,5 +1,7 @@
-﻿Console.WriteLine("Введите число: ");
-int N = int.Parse(Console.ReadLine());
+﻿//  7. Показать числа от -N до N
+
+Console.WriteLine("Введите число: ");
+int N = Convert.ToInt32(Console.ReadLine());
 
 int count = -N; 
 while (count <= N)
