@@ -1,42 +1,16 @@
 ﻿// 18. Проверить истинность утверждения ¬(X ⋁ Y) = ¬X ⋀ ¬Y
 
-Console.Write("Введите первое значение: ");
-bool x = Convert.ToBoolean(Console.ReadLine());
-Console.Write("Введите второе значение: ");
-bool y = Convert.ToBoolean(Console.ReadLine());
-bool F1 = !(x || y);
-bool F2 = !x && !y;
-if (F1 == F2)
+bool[] x = { true, false };
+bool[] y = { true, false };
+int count = 0;
+for (int i = 0; i < x.Length; i++)
 {
-    Console.WriteLine("Утверждение истинно!");
+    for (int j = 0; j < y.Length; j++)
+    {
+        Console.WriteLine($"{x[i]}, {y[j]}");
+        if ((!(x[i] || y[j])) == (!x[i] && !y[j])) count++;
+
+    }
 }
-else
-{
-    Console.WriteLine("Утверждение ложно!");
-}
-
-
-
-
-
-
-// if (x == false && y == false)
-// {
-// bool F = x && y;
-// Console.WriteLine(F);
-// }
-// else if (x == false && y == true)
-// {
-// bool F = x && y;
-// Console.WriteLine(F);
-// }
-// else if (x == true && y == false)
-// {
-// bool F = x && y;
-// Console.WriteLine(F);
-// }
-// if (x == true && y == true)
-// {
-//  bool F = x && y;
-// Console.WriteLine(F);
-// }
+if (count == 4) Console.WriteLine("Утверждение истинно");
+else Console.WriteLine("Утверждение ложно");
